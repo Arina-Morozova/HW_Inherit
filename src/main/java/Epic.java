@@ -9,4 +9,14 @@ public class Epic extends Task {
     public String[] getSubtasks() {
         return subtasks;
     }
+
+    @Override
+    public boolean matches(String query) {
+        for (int i = 0; i < subtasks.length; i++){
+            if (subtasks[i].contains(query)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
